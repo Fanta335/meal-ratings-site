@@ -1,8 +1,8 @@
-const { nextTick } = require("process");
-
 const router = require("express").Router();
+const path = require("path");
+const { mysqlFileLoader } = require("../lib/database/fileLoader");
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
   const { promisify } = require("util");
   const config = require("../config/mysql.config.js");
   const mysql = require("mysql");
@@ -22,10 +22,10 @@ router.get("/", async (req, res) => {
 
   try {
     await client.connect();
-    data = await client.query("SELECT * FROM t_meal");
+    data = await client.query(mysqlFileLoader(path.join(path.resolve(__dirname, ".."), "/lib/database/sql"))("SELECT_MEAL.sql"));
     console.log(data);
   } catch (err) {
-    nextTick(err);
+    next(err);
   } finally {
     await client.end();
   }
