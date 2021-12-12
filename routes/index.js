@@ -24,14 +24,12 @@ router.get("/", async (req, res, next) => {
     await client.connect();
     data = await client.query(mysqlFileLoader(path.join(path.resolve(__dirname, ".."), "/lib/database/sql"))("SELECT_MEAL.sql"));
     console.log(data);
+    res.render("./index.ejs", { meals: data });
   } catch (err) {
     next(err);
   } finally {
     await client.end();
   }
-
-  // res.end("OK");
-  res.render("./index.ejs");
 });
 
 module.exports = router;
