@@ -9,26 +9,11 @@
       <h1 class="text-center">Rate Your Favorite Meals</h1>
       <div class="container border border-primary p-2">
         <div class="d-flex flex-wrap">
-          <div class="col-sm-4 border border-primary">
-            <h4>Morning Foods</h4>
-            <p>content</p>
-          </div>
-          <div class="col-sm-4 border border-primary">
-            <h4>Morning Foods</h4>
-            <p>content</p>
-          </div>
-          <div class="col-sm-4 border border-primary">
-            <h4>Morning Foods</h4>
-            <p>content</p>
-          </div>
-          <div class="col-sm-4 border border-primary">
-            <h4>Morning Foods</h4>
-            <p>content</p>
-          </div>
-          <div class="col-sm-4 border border-primary">
-            <h4>Morning Foods</h4>
-            <p>content</p>
-          </div>
+          <%- include('./components/category.ejs', {meals: meals, type: 'morning'}) %>
+          <%- include('./components/category.ejs', {meals: meals, type: 'afternoon'}) %>
+          <%- include('./components/category.ejs', {meals: meals, type: 'evening'}) %>
+          <%- include('./components/category.ejs', {meals: meals, type: 'date'}) %>
+          <%- include('./components/category.ejs', {meals: meals, type: 'rate'}) %>
         </div>
         <div class="border border-primary">
           <h4>Add a new meal</h4>

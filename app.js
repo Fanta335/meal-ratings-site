@@ -7,6 +7,12 @@ const app = express();
 // template engine setting
 app.set("view engine", "ejs");
 
+// Expose global method to view engine
+app.use((req, res, next) => {
+  res.locals.image = require("./lib/view/category");
+  next();
+});
+
 // static source settings
 app.use(favicon(path.join(__dirname, "/public/favicon.ico")));
 app.use("/public", express.static(path.join(__dirname, "/public")));
