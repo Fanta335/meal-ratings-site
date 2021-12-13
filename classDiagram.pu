@@ -29,11 +29,11 @@ class MealRepository {
   + addMeal(meal: Meal): void
   + updateMeal(meal: Meal): void
   + deleteMeal(meal: Meal): void
-  + getMeal(meal: Meal): void
+  + getMealById(mealId: int): void
   + addMealRating(mealRating: MealRating): void
   + updateMealRating(mealRating: MealRating): void
   + deleteMealRating(mealRating: MealRating): void
-  + getMealRating(mealRating: MealRating): void
+  + getMealRatingsByMealId(mealId: int): void
 }
 
 database MySQL {
