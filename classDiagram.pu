@@ -21,8 +21,8 @@ class MealRating {
   # meal: MealForeignKey
   # rating: float
   (min 0.0, max 5.0)
-  __
   # dateOfRating: datetime
+  __
 }
 
 class MealRepository {
