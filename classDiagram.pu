@@ -1,0 +1,49 @@
+@startuml classDiagram
+allow_mixing
+' skinparam ClassAttributeIconSize 0
+
+class Meal{
+  # mealId: int
+  # name: string
+  # description: string
+  # imageUrl: string
+  # countryOfOrigin: int
+  # typicalMealTime: int
+  (1: morning, 2: afternoon, 3: evening)
+  # dateAdded: datetime
+  # ratings: MealRating[]
+  __
+  # avgRating(): float
+  # numberOfVotes(): int
+}
+
+class MealRating {
+  # meal: MealForeignKey
+  # rating: float
+  (min 0.0, max 5.0)
+  __
+  # dateOfRating: datetime
+}
+
+class MealRepository {
+  + addMeal(meal: Meal): void
+  + updateMeal(meal: Meal): void
+  + deleteMeal(meal: Meal): void
+  + getMeal(meal: Meal): void
+  + addMealRating(mealRating: MealRating): void
+  + updateMealRating(mealRating: MealRating): void
+  + deleteMealRating(mealRating: MealRating): void
+  + getMealRating(mealRating: MealRating): void
+}
+
+database MySQL {
+  component meal
+  component meal_rating
+}
+
+Meal "1" *..> "0..*" MealRating
+MealRepository ..> Meal
+MealRepository .. meal
+MealRepository .. meal_rating
+
+@enduml
