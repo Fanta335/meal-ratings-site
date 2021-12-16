@@ -10,7 +10,7 @@ class Meal{
   # countryOfOrigin: int
   # typicalMealTime: int
   (1: morning, 2: afternoon, 3: evening)
-  # dateAdded: datetime
+  # createdAt: datetime
   # ratings: MealRating[]
   __
   # avgRating(): float
@@ -23,7 +23,6 @@ class MealRating {
   # rating: float
   (min 0.0, max 5.0)
   # createdAt: datetime
-  # updatedAt: datetime
   __
 }
 
