@@ -1,0 +1,36 @@
+@startuml classDiagram
+allow_mixing
+' skinparam ClassAttributeIconSize 0
+
+class Meal{
+  # id: int
+  # name: string
+  # description: string
+  # imageUrl: string
+  # countryOfOrigin: int
+  # typicalMealTime: int
+  (1: morning, 2: afternoon, 3: evening)
+  # dateAdded: datetime
+  # ratings: MealRating[]
+  __
+  # avgRating(): float
+  # numberOfVotes(): int
+}
+
+class MealRating {
+  # id: int
+  # meal: MealForeignKey
+  # rating: float
+  (min 0.0, max 5.0)
+  # createdAt: datetime
+  # updatedAt: datetime
+  __
+}
+
+database MySQL {
+  component Meals
+  component MealRatings
+}
+
+Meal "1" *..> "0..*" MealRating
+@enduml
