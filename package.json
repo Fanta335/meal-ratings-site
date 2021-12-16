@@ -9,12 +9,14 @@
   "author": "Fanta335",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.4.1"
+    "eslint": "^8.4.1",
+    "sequelize-cli": "^6.3.0"
   },
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
+    "sequelize": "^6.11.0",
     "serve-favicon": "^2.5.0"
   }
 }
