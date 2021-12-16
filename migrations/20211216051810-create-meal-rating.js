@@ -8,14 +8,19 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      meal: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "Meals",
+            key: "id",
+          },
+        },
+      },
       rating: {
         type: Sequelize.FLOAT,
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },

@@ -18,16 +18,12 @@ module.exports = {
         type: Sequelize.STRING,
       },
       countryOfOrigin: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       typicalMealTime: {
         type: Sequelize.INTEGER,
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },
