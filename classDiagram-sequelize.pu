@@ -7,7 +7,7 @@ class Meal{
   # name: string
   # description: string
   # imageUrl: string
-  # countryOfOrigin: int
+  # countryOfOrigin: string
   # typicalMealTime: int
   (1: morning, 2: afternoon, 3: evening)
   # createdAt: datetime
